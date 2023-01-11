@@ -1,21 +1,23 @@
-.App{
-  font-family: 'Space Grotesk', sans-serif;
+.App {
+  font-family: "Space Grotesk", sans-serif;
 }
 
-.bg-front{
-  background-image: url('../src/assets/images/bg-card-front.png');
+.bg-front {
+  background-image: url("../src/assets/images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
+  @apply absolute -translate-x-6 md:translate-x-36 transition-all translate-y-[100px] lg:translate-y-0 lg:static w-[300px] lg:w-[400px] lg:h-[220px] text-white p-[20px] lg:translate-x-[80px] xl:translate-x-[100px] 2xl:translate-x-[200px] my-6 ;
 }
-.bg-back{
-  background-image: url('../src/assets/images/bg-card-back.png');
+.bg-back {
+  background-image: url("../src/assets/images/bg-card-back.png");
   background-repeat: no-repeat;
   background-size: contain;
+  @apply w-[300px] lg:w-[400px] h-[165px] lg:h-[220px] transition-all text-white p-[20px] lg:translate-x-[120px] xl:translate-x-[150px] 2xl:translate-x-[250px] flex justify-end items-center;
 }
-.card-display{
-  background-image: url('../src/assets/images/bg-main-desktop.png');
+.card-display {
+  background-image: url("../src/assets/images/bg-main-desktop.png");
   background-repeat: no-repeat;
-background-size: cover;
+  background-size: cover;
 }
 /* .App {
   text-align: center;
@@ -57,6 +59,6 @@ background-size: cover;
 } */
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }

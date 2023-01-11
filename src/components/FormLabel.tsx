@@ -28,7 +28,7 @@ const FormLabel = ({
   className
 }: Label) => {
   return (
-    <label className={`block my-8 ${className}`}>
+    <label className={`block transition-all my-8 ${className}`}>
       <p className="uppercase my-2">{fieldLabel}</p>
       <input
         className="rounded-md py-2 border border-gray-400 outline-none px-3 w-full"

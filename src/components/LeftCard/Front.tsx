@@ -27,13 +27,13 @@ const Front = ({ fields }: Fields) => {
   };
 
   return (
-    <div className="bg-front w-[400px] h-[220px] text-white p-[20px] translate-x-[100px] 2xl:translate-x-[200px] my-6">
-      <div className="flex items-center mb-16">
-        <span className="w-[35px] h-[35px] bg-white rounded-full inline-block"></span>
-        <span className="w-[20px] h-[20px] border rounded-full inline-block ml-3"></span>
+    <div className="bg-front ">
+      <div className="flex items-center mb-10 lg:mb-16">
+        <span className="w-[25px] h-[25px] lg:w-[35px] lg:h-[35px] bg-white rounded-full inline-block"></span>
+        <span className="w-[10px] h-[10px] lg:w-[20px] lg:h-[20px] border rounded-full inline-block ml-3"></span>
       </div>
       <section className="w-full">
-        <h3 className="uppercase my-3 text-xl">
+        <h3 className="uppercase my-3 lg:text-xl">
           {cardNumber.length === 0
             ? "0000  0000  0000  0000"
             : splitNumber(cardNumber)}

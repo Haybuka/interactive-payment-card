@@ -54,7 +54,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
   // console.log(errors);
   return (
     <FormikProvider value={formik}>
-      <form className="w-[500px]" onSubmit={handleSubmit}>
+      <form className="w-auto md:w-[350px] xl:w-[500px] bg-white" onSubmit={handleSubmit}>
         <FormLabel
           type="text"
           fieldLabel="CardHolder Name"
@@ -78,7 +78,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
           setFieldValue={setFieldValue}
         />
         <div className="flex justify-between items-start">
-          <section className="w-[250px] relative">
+          <section className="w-[170px] md:w-[180px] lg:w-[200px] relative">
             <p className="mb-3 absolute">EXP.DATE (MM/YY)</p>
             <div className="flex items-center gap-2">
               <FormLabel
@@ -116,7 +116,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
             handleChange={handleChange}
             handleBlur={handleBlur}
             setFieldValue={setFieldValue}
-            className="w-[200px] my-0"
+            className="w-[100px] md:w-[130px] lg:w-[190px] my-0"
             error={errors.cvv}
           />
           {/* <label className="block my-8 w-[200px]">
