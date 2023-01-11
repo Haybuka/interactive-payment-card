@@ -49,11 +49,11 @@ function App() {
 
   return (
     <main className="grid grid-cols-3 App">
-      <aside className="card-display col-span-3 lg:col-span-1 lg:h-screen flex items-center justify-center flex-col relative md:static p-6 lg:p-0">
+      <aside className="card-display ">
         <Front fields={fields} />
         <Back cvv={fields.cvv} />
       </aside>
-      <section className="col-span-3 lg:col-span-2 lg:h-screen translate-y-[78px] flex justify-center items-center px-4 my-3 md:px-0 md:my-0">
+      <section className="form-display ">
         {!isSubmitted ? (
           <Form
             fields={fields}

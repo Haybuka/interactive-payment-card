@@ -18,45 +18,11 @@
   background-image: url("../src/assets/images/bg-main-desktop.png");
   background-repeat: no-repeat;
   background-size: cover;
+  @apply col-span-3 lg:col-span-1 lg:h-screen flex items-center justify-center flex-col relative md:static p-6 lg:p-0;
 }
-/* .App {
-  text-align: center;
+.form-display{
+  @apply col-span-3 lg:col-span-2 lg:h-screen translate-y-[78px] flex justify-center items-center px-4 my-3 md:px-0 md:my-0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
 
 /* Firefox */
 input[type="number"] {
