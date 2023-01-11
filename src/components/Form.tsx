@@ -1,9 +1,11 @@
 import { useFormik, FormikProvider } from "formik";
-import React, { ChangeEventHandler } from "react";
+import React, { ChangeEventHandler, useState } from "react";
 import { Iforms as Props } from "../App";
 import * as yup from "yup";
 import ErrorForm from "./ErrorForm";
 import FormLabel from "./FormLabel";
+import Button from "./Button";
+import { act } from "react-dom/test-utils";
 
 type FormProps = {
   fields: {
@@ -15,11 +17,19 @@ type FormProps = {
   };
   setFields: React.Dispatch<React.SetStateAction<Props["fields"]>>;
   handleChange: ChangeEventHandler<HTMLInputElement>;
+  // handleSubmitt: (isSubmitting:boolean) =>void;
+  setIsSubmission: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Form = ({ fields, setFields, handleChange }: FormProps) => {
+const Form = ({
+  fields,
+  setFields,
+  handleChange,
+  setIsSubmission,
+}: FormProps) => {
   // const Form: React.FC= ({ fields,setFields }) => {
   let { cardName, cardNumber, cvv, month, year } = fields;
+  let [isSubmitted, setIsSubmitted] = useState(false);
 
   let formik = useFormik({
     initialValues: {
@@ -31,7 +41,10 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
     },
     validationSchema: yup.object().shape({
       cardName: yup.string().required("can't be blank"),
-      cardNumber: yup.string().required("can't be blank").max(16,'card number cant exceed 16'),
+      cardNumber: yup
+        .string()
+        .required("can't be blank")
+        .max(16, "card number cant exceed 16"),
       cvv: yup
         .string()
         .max(3, "error not morethan 3")
@@ -45,16 +58,24 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
         .max(2, "error not more than 2")
         .required("can't be blank"),
     }),
-    onSubmit: (values) => {
-      setFields(values);
+    onSubmit: async (values) => {
+      
+     setFields(values);
+     setIsSubmitted((prev) => true);
+     setIsSubmission((prev) => isSubmitted);
+      formik.resetForm()
+      // resetForm()
     },
   });
 
   let { handleSubmit, handleBlur, setFieldValue, values, errors } = formik;
-  // console.log(errors);
+  // resetForm()
   return (
     <FormikProvider value={formik}>
-      <form className="w-auto md:w-[350px] xl:w-[500px] bg-white" onSubmit={handleSubmit}>
+      <form
+        className="w-auto md:w-[350px] xl:w-[500px] bg-white"
+        onSubmit={handleSubmit}
+      >
         <FormLabel
           type="text"
           fieldLabel="CardHolder Name"
@@ -110,13 +131,13 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
           <FormLabel
             type="number"
             fieldName="cvv"
-            fieldLabel="cvv"
+            fieldLabel="cvc"
             fieldValue={values.cvv}
             placeholder="e.g 123"
             handleChange={handleChange}
             handleBlur={handleBlur}
             setFieldValue={setFieldValue}
-            className="w-[100px] md:w-[130px] lg:w-[190px] my-0"
+            className="w-[100px] md:w-[130px] lg:w-[190px] my-0 mb-1"
             error={errors.cvv}
           />
           {/* <label className="block my-8 w-[200px]">
@@ -134,12 +155,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
           </label> */}
         </div>
 
-        <button
-          type="submit"
-          className="w-full bg-[#21092f] text-white rounded-md py-3"
-        >
-          Confirm
-        </button>
+        <Button text="confirm" />
       </form>
     </FormikProvider>
   );

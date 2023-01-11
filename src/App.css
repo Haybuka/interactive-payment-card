@@ -6,7 +6,7 @@
   background-image: url("../src/assets/images/bg-card-front.png");
   background-repeat: no-repeat;
   background-size: contain;
-  @apply absolute -translate-x-6 md:translate-x-36 transition-all translate-y-[100px] lg:translate-y-0 lg:static w-[300px] lg:w-[400px] lg:h-[220px] text-white p-[20px] lg:translate-x-[80px] xl:translate-x-[100px] 2xl:translate-x-[200px] my-6 ;
+  @apply absolute -translate-x-5 md:translate-x-36 transition-all translate-y-[100px] lg:translate-y-0 lg:static w-[300px] lg:w-[400px] lg:h-[220px] text-white p-[20px] lg:translate-x-[80px] xl:translate-x-[100px] 2xl:translate-x-[200px] my-6 ;
 }
 .bg-back {
   background-image: url("../src/assets/images/bg-card-back.png");
