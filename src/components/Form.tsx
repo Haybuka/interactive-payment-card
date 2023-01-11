@@ -31,7 +31,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
     },
     validationSchema: yup.object().shape({
       cardName: yup.string().required("can't be blank"),
-      cardNumber: yup.string().required("can't be blank"),
+      cardNumber: yup.string().required("can't be blank").max(16,'card number cant exceed 16'),
       cvv: yup
         .string()
         .max(3, "error not morethan 3")
@@ -77,7 +77,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
           handleBlur={handleBlur}
           setFieldValue={setFieldValue}
         />
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start">
           <section className="w-[250px] relative">
             <p className="mb-3 absolute">EXP.DATE (MM/YY)</p>
             <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ const Form = ({ fields, setFields, handleChange }: FormProps) => {
             handleChange={handleChange}
             handleBlur={handleBlur}
             setFieldValue={setFieldValue}
-            className="w-[200px]"
+            className="w-[200px] my-0"
             error={errors.cvv}
           />
           {/* <label className="block my-8 w-[200px]">

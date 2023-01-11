@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Frontend Mentor - Interactive card details form solution
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Frontend Mentor - Interactive card details form solution](#frontend-mentor---interactive-card-details-form-solution)
+  - [Table of contents](#table-of-contents)
+  - [Overview](#overview)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
+  - [My process](#my-process)
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
+    - [Useful resources](#useful-resources)
+  - [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### The challenge
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+- Fill in the form and see the card details update in real-time
+- Receive error messages when the form is submitted if:
+  - Any input field is empty
+  - The card number, expiry date, or CVC fields are in the wrong format
+- View the optimal layout depending on their device's screen size
+- See hover, active, and focus states for interactive elements on the page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshot
 
-### `npm run build`
+![](./screenshot.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `npm run eject`
+- Solution URL: [[Add solution URL here](https://github.com/Haybuka/interactive-payment-card)](https://github.com/Haybuka/interactive-payment-card)
+- Live Site URL: [[Add live site URL here](https://cardts.netlify.app)](https://cardts.netlify.app)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## My process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built with
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Formik for validation
+- Typescript
+- Tailwindcss
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Desktop-first workflow
+- [React](https://reactjs.org/) - JS library
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### What I learned
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Was able to practice using types in Typescript.
+-  setting of types on Formik setFieldValues and function usage.
+- Prop drilling using Typescript, while assigning types.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+```Ts
+ type Label = {
+  type:string;
+  fieldLabel? : string;
+  fieldName: string;
+  fieldValue: string;
+  placeholder: string;
+  className?:string;
+  error? : string;
+  setFieldValue: FormikValues['setFieldValue'];
+  handleChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleBlur: (e: React.FocusEvent<any, Element>) => void;
+};
+
+```
+
+
+
+
+### Useful resources
+
+- [Typescript](https://www.typescriptlang.org/) 
+
+
+## Author
+
+- Website - [Paschal Chukwu](https://www.your-site.com)
+- Frontend Mentor - [@Haybuka](https://www.frontendmentor.io/profile/Haybuka)
+- Twitter - [@Haybuka](https://www.twitter.com/Haybuka)
+

@@ -9,7 +9,23 @@ type Fields = {
   };
 };
 const Front = ({ fields }: Fields) => {
-    const {cardName,cardNumber,month,year}= fields
+  const { cardName, cardNumber, month, year } = fields;
+
+  const splitNumber = (cardNumber: string): string => {
+    let newCardNumber:string = `0${cardNumber.slice(0,16)}`
+    let total: string[] = [];
+    for (let i: number = 1; i < newCardNumber.length; i++) {
+      if (i % 4 === 0) {
+        total.push(newCardNumber[i]);
+        total.push(" ");
+      } else {
+        total.push(newCardNumber[i]);
+      }
+    }
+
+    return total.toString().split(",").join("");
+  };
+
   return (
     <div className="bg-front w-[400px] h-[220px] text-white p-[20px] translate-x-[100px] 2xl:translate-x-[200px] my-6">
       <div className="flex items-center mb-16">
@@ -18,15 +34,17 @@ const Front = ({ fields }: Fields) => {
       </div>
       <section className="w-full">
         <h3 className="uppercase my-3 text-xl">
-          {cardNumber.length === 0 ? "0000  0000  0000  0000" : cardNumber.slice(0,20)}
+          {cardNumber.length === 0
+            ? "0000  0000  0000  0000"
+            : splitNumber(cardNumber)}
         </h3>
         <div className="flex justify-between items-center">
           <h3 className="uppercase text-base">
-            {cardName.length === 0 ? "Jane Appleseed" : cardName.slice(0,20)}
+            {cardName.length === 0 ? "Jane Appleseed" : cardName.slice(0, 20)}
           </h3>
           <p>
-            <span>{month.length === 0 ? "00" : month.slice(0,2)}</span>/
-            <span>{year.length === 0 ? "00" : year.slice(0,2)}</span>
+            <span>{month.length === 0 ? "00" : month.slice(0, 2)}</span>/
+            <span>{year.length === 0 ? "00" : year.slice(0, 2)}</span>
           </p>
         </div>
       </section>
