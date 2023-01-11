@@ -73,7 +73,7 @@ const Form = ({
   return (
     <FormikProvider value={formik}>
       <form
-        className="w-auto md:w-[350px] xl:w-[500px] bg-white"
+        className="w-full md:w-[350px] xl:w-[500px] bg-white"
         onSubmit={handleSubmit}
       >
         <FormLabel

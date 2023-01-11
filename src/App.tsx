@@ -53,7 +53,7 @@ function App() {
         <Front fields={fields} />
         <Back cvv={fields.cvv} />
       </aside>
-      <section className="col-span-3 lg:col-span-2 h-screen flex justify-center items-center px-4 my-3 md:px-0 md:my-0">
+      <section className="col-span-3 lg:col-span-2 lg:h-screen translate-y-[78px] flex justify-center items-center px-4 my-3 md:px-0 md:my-0">
         {!isSubmitted ? (
           <Form
             fields={fields}
